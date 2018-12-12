@@ -8,7 +8,7 @@ void dreiEcksTausch (int *, int);
 
 void bubbleSort (int *, int);
 
- 
+
     int main () 
     {
       
@@ -16,7 +16,6 @@ void bubbleSort (int *, int);
           
         int z[anz];
           
-         
         erzeugeArray (z, anz);
           
         printf ("Array mit %d zufälligen Zahlen:\n ", anz);
@@ -29,8 +28,6 @@ void bubbleSort (int *, int);
     
     }
 
-
- 
     void erzeugeArray (int *array, int anz) 
     {
       
@@ -45,8 +42,6 @@ void bubbleSort (int *, int);
 
     }
 
-
- 
     void zeigeArrayInConsole (int *array, int anz) 
     {
       
