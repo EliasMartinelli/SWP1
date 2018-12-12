@@ -21,9 +21,7 @@ void bubbleSort (int *, int);
         printf ("Array mit %d zufälligen Zahlen:\n ", anz);
           
         zeigeArrayInConsole (z, anz);
-          
-        printf ("\n ", anz);
-          
+        
         return 0;
     
     }
