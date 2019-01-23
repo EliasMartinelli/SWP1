@@ -1,9 +1,0 @@
-*** Zufallszahl im Bereich ***
-
-rand() ... Zufallszahl von top ist [0 , 32768]
-
-  - für Zahl aus [0 , 100]
-    rand()%100
-    
-  - für Zahl aus [ug , og]
-    rand() % (og-ug)+ug;
