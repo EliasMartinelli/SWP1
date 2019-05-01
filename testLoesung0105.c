@@ -2,7 +2,7 @@
 
 void fillArray(int *array, int size, int Untergrenze, int Obergrenze)
 {
-    rand(time(0));
+    srand(time(0));
     
     for(int i = 0; i < size; i++)
     {
@@ -10,13 +10,13 @@ void fillArray(int *array, int size, int Untergrenze, int Obergrenze)
     }
 }
 
-void printArray(int *array, int size);
+void printArray(int *array, int size)
 {
     for(int i = 0; i < size; i++)
     {
         if(i % 12 == 0)
         {
-            printf("\n";)
+            printf("\n");
         }
         printf("%d ", array[i]);
     }
@@ -54,11 +54,11 @@ void buildNewArray(int *array, int size, int minimum, int maximum)
 {
     for(int i = 0; i < size; i++)
     {
-        if(i % 20 == 0)
+        if(i % 2 == 0)
         {
             array[i] = minimum;
         }
-        if(i % 20 == 0)
+        if(i % 2 != 0)
         {
             array[i] = maximum;
         }
