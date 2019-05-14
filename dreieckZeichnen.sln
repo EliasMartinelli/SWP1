@@ -55,52 +55,6 @@ namespace TestDrawProgramm
             drawForm();
         }
 
-        private Control getControl(string ctrTyp, string coordinate)
-        {
-            Control ret = null;
-            string character = "";
-            string textBoxName = "";
-
-            foreach (Control c in this.Controls)
-            {
-                if (c.Name.Substring(0, 3) == "rdb")
-                {
-                    if (((RadioButton)c).Checked)
-                    {
-                        character = c.Name.Substring(3, 1);
-                        break;
-                    }
-                }
-            }
-            if (character != "")
-            {
-                textBoxName = ctrTyp + character + coordinate;
-                foreach (Control c in this.Controls)
-                {
-                    if (c.Name.Length > 4 && c.Name.Substring(0, 5) == textBoxName)
-                    {
-                        ret = c;
-                        break;
-                    }
-                }
-            }
-            return ret;
-        }
-
-        private void picBox_MouseClick(object sender, MouseEventArgs e)
-        {
-            Control foo = getControl("txt", "X");
-            Control bar = getControl("txt", "Y");
-
-            if (foo != null)
-            {
-
-                foo.Text = xPictureX(e.X).ToString("#0.0");
-                bar.Text = yPictureY(e.Y).ToString("#0.0");
-
-                startDrawing();
-            }
-        }
 
         private void drawForm()
         {
