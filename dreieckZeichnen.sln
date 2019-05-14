@@ -104,6 +104,7 @@ namespace TestDrawProgramm
         private float xPictureX(float xb)
         {
             float x = (((xb - edge) * (xRight - xLeft)) / width) + xLeft;
+            
             return x;
         }
 
