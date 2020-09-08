@@ -1,0 +1,104 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void fillArray(int*array, int anzArrayElemente, int unterGrenze, int oberGrenze)
+{
+    srand(time(0));
+    
+    for(int i = 0; i < anzArrayElemente; i++)
+    {
+        array[i] = (rand() % (oberGrenze - unterGrenze)) + unterGrenze;
+    }
+}
+
+void printArray (int*array, int anzArrayElemente)
+{
+    for(int i = 0; i < anzArrayElemente; i++)
+    {
+        if(i % 12 == 0)
+        {
+            printf("\n");
+        }
+        printf("%d ", array[i]);
+    }
+}
+
+int min (int*array, int anzArrayElemente)
+{
+    int min = array[0];
+    
+    for(int i = 1; i < anzArrayElemente; i++)
+    {
+        if(array[i] > min)
+        {
+            min = array[i];
+        }
+    }
+    return min;
+}
+
+int max (int*array, int anzArrayElemente)
+{
+    int max = array[0];
+    
+    for(int i = 1; i < anzArrayElemente; i++)
+    {
+        if(array[i] > max)
+        {
+            max = array[i];
+        }
+    }
+    return max;
+}
+
+void buildNewArray (int*array, int anzArrayElemente, int minimum, int maximum)
+{
+    for(int i = 0; i < anzArrayElemente; i++)
+    {
+        if(i % 2 == 0)
+        {
+            array[i] = minimum;
+        }
+        if(i % 2 != 0)
+        {
+            array[i] = maximum;
+        }
+    }
+}
+
+int main()
+{
+    
+    int anzArrayElemente = 20;
+    int array[anzArrayElemente];
+    int unterGrenze = 300;
+    int oberGrenze = 500;
+    int anzSpalten = 12;
+    
+    int sum, loop;
+    float avg;
+    
+    fillArray(array, anzArrayElemente, unterGrenze, oberGrenze);
+    printf("Array Original: \n");
+    printArray(array, anzArrayElemente);
+    
+        sum = avg = 0;
+    
+    for(loop = 0; loop < anzArrayElemente; loop++)
+    {
+        sum = sum + array[loop];
+    }
+    
+    avg = (float)sum / loop;
+    printf("\n\nDurchschnitt des Arrays: %.2f", avg);
+    
+    int minimum = min(array, anzArrayElemente);
+    int maximum = max(array, anzArrayElemente);
+    printf("\n\nArray Umgestellt: \n");
+    
+    buildNewArray(array, anzArrayElemente, minimum, maximum);
+    printArray(array, anzArrayElemente);
+    
+    return 0;
+}
