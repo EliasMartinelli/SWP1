@@ -1,3 +1,5 @@
+// MEINE LÖSUNG
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -30,7 +32,7 @@ int min (int*array, int anzArrayElemente)
     
     for(int i = 1; i < anzArrayElemente; i++)
     {
-        if(array[i] > min)
+        if(array[i] < min)
         {
             min = array[i];
         }
